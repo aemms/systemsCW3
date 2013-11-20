@@ -10,7 +10,7 @@
   <body>
     <div class="container">
       <header>
-        <h1>Alex Emms Systems Engineering Coursework 3</h1>
+        <h1>Alex Emms Systems Engineering Coursework 3 <a href="turtle.php"><span class="glyphicon glyphicon-expand pull-right"></span></a></h1>
       </header>
       <section class="row space">
         <?php include "php/section_myself.php" ?>
@@ -20,9 +20,10 @@
         <h2>Wordpress Feed</h2>
         <iframe id="wordpress" width="1200" height="315" src="http://blog.alexemms.com/" frameborder="0" allowfullscreen></iframe>      
       </section>
-  
-      <div id="github-commits"></div>
-
+      <section class="space spacebottom">
+        <h2>Github Feed</h2>
+        <div id="github-commits"></div>  
+      </section>
     </div> <!-- container -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

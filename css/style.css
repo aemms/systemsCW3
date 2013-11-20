@@ -1,9 +1,14 @@
 body {
 	margin-top: 50px;
+	background-color: #ecf0f1;
 }
 
 .space {
 	margin-top: 50px;
+}
+
+.spacebottom {
+	margin-bottom: 150px;
 }
 
 #wordpress {
@@ -12,6 +17,12 @@ body {
 
 #wrapper {
 	max-width: 100%;
+	margin: 0 auto;
+}
+
+#myCanvas {
+	border: 1px solid #000000;
+	background: #00ff00;
 	margin: 0 auto;
 }
 

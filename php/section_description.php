@@ -1,5 +1,3 @@
 <div class="col-sm-6 col-md-6 col-lg-6 project">
-	<p>Mauris luctus hendrerit neque nec fringilla. Curabitur sollicitudin ac eros at interdum. Integer eget ultrices orci. Praesent vel tortor justo. In rutrum, odio et pulvinar varius, tortor risus commodo est, eu interdum augue lorem eget odio.</p>
-
 	<p>Phasellus eget dapibus diam. Fusce posuere pulvinar enim mattis viverra. Duis volutpat purus vel porttitor tempus. Phasellus vitae varius orci, eu imperdiet orci. Curabitur mattis convallis velit. Mauris metus sem, molestie non tristique sit amet, vulputate non velit. Suspendisse viverra placerat dolor quis rhoncus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum rutrum aliquet velit. Cras ultrices vel enim sed volutpat. Phasellus elit felis, ullamcorper sed felis ut, dictum ornare arcu. Duis ac erat eget nisl consectetur cursus. Ut quis mauris ipsum. Donec ultrices quam nec iaculis dignissim. </p>
 </div> 

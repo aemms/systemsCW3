@@ -63,10 +63,10 @@ THE SOFTWARE.
 
                 element.empty();
 
-                var list = $('<ul class="github-commits-list">').appendTo(element);
+                var list = $('<ul class="github-commits-list list-group">').appendTo(element);
                 for (var c = 0; c < totalCommits; c++) {
                     var cur = commits[c];
-                    var li = $("<li>");
+                    var li = $("<li class='list-group-item'>");
 
                     var e_user = $('<span class="github-user">');
                     //add avatar & github link if possible
@@ -100,7 +100,7 @@ THE SOFTWARE.
                 function author(login) {
                     return  $('<a>')
                             .attr("href", 'https://github.com/' + login)
-                            .text(login);
+                            .text(" " + login + " ");
                 }
 
                 function message(commitMessage, sha) {
@@ -113,7 +113,7 @@ THE SOFTWARE.
                     var link = $('<a class="github-commit"></a>')
                       .attr("title", originalCommitMessage)
                       .attr("href", 'https://github.com/' + user + '/' + repo + '/commit/' + sha)
-                      .text(commitMessage);
+                      .text(commitMessage + " ");
 
                     return link;
                 }
@@ -129,17 +129,17 @@ THE SOFTWARE.
                             var differenceInMinutes = Math.floor(((todayTime - commitTime)/(600*1000)));
                             if (differenceInMinutes === 0) {
 
-                                return 'just now';
+                                return ' just now ';
                             }
 
-                            return 'about ' + differenceInMinutes + ' minutes ago';
+                            return ' about ' + differenceInMinutes + ' minutes ago ';
                         }
 
-                        return 'about ' + differenceInHours + ' hours ago';
+                        return ' about ' + differenceInHours + ' hours ago ';
                     } else if (differenceInDays == 1) {
-                        return 'yesterday';
+                        return ' yesterday ';
                     }
-                    return differenceInDays + ' days ago';
+                    return differenceInDays + ' days ago ';
                 }
             });
         }
