@@ -1,7 +1,11 @@
 (function ($) {
 
-	var canvas;
-	var ctx;
+	var canvas = document.getElementById("myCanvas");
+	var ctx = canvas.getContext("2d");
+	var upKey = false;
+	var downKey = false;
+	var leftKey = false;
+	var rightKey = false;
 	var dy = 5;
 	var dx = 5;
 	var x = 400;
@@ -9,13 +13,7 @@
 	var WIDTH = 800;
 	var HEIGHT = 600;
 
-	function init() {
-		canvas = document.getElementById("myCanvas");
-		ctx = canvas.getContext("2d");
-		return setInterval(draw, 10);
-	}
-
-	function triangle(x, y) {
+	function makeTriangle(x, y) {
 		ctx.beginPath();
 		ctx.moveTo(x, y);
 		ctx.lineTo(x + 10, y + 20);
@@ -24,67 +22,76 @@
 		ctx.fill();
 	}
 
-	function clear() {
+	function clearCanvas() {
 		ctx.clearRect(0, 0, WIDTH, HEIGHT);
 	}
 
+	function loop() {
+		clearCanvas();
+		draw();
+	}
+
 	function draw() {
-		clear();
-		ctx.fillStyle = "#00ff00";
-		ctx.strokeStyle = "#ffffff";
-	  rect(0,0,WIDTH,HEIGHT);
+		if(rightKey){
+			x += 2;
+		} else if(leftKey){
+			x -= 2;
+		} else if(upKey) {
+			y -= 2;
+		} else if(downKey) {
+			y += 2;
+		}
 	  ctx.fillStyle = "#ff0000";
-	  triangle(x, y);
+	  makeTriangle(x , y);
 	}
 
-	function rect(x,y,WIDTH,HEIGHT) {
-	  ctx.beginPath();
-	  ctx.rect(x,y,WIDTH,HEIGHT);
-	  ctx.closePath();
-	  ctx.fill();
-	  ctx.stroke();
-	}
-
-	function doKeyDown(event) {
+	function isKeyDown(event) {
 		switch (event.keyCode) {
 			
 			case 38: //Up arrow
-				if(y - dy > 0) {
-					y -= dy;
-				}
+				upKey = true;
 				break;
 
 			case 40: //Down
-				if(y + dy < HEIGHT) {
-					y += dy;
-				}
+				downKey = true;
 				break;
 
 			case 37: //left
-				if(x - dx > 0){
-					x -= dx;
-				}
+				leftKey = true;
 				break;
 
 			case 39: //right
-				if(x + dx < WIDTH) {
-					x += dx;
-				}
+				rightKey = true;
 				break;
 		}
 	}
 
+	function isKeyUp(event) {
+		switch(event.keyCode){
+			case 38: //up
+				upKey = false;
+			break;
+
+			case 40://down
+				downKey = false;
+			break;
+
+			case 37://left
+				leftKey = false;
+			break;
+
+			case 39://right
+				rightKey = false;
+			break;
+		}
+	}
+
+	function init() {
+		window.addEventListener('keydown',isKeyDown,true);
+		window.addEventListener('keyup',isKeyUp,true);
+		setInterval(loop, 1);
+	}
+
 	init();
-	window.addEventListener('keydown',doKeyDown,true);
-		
-		// var canvas = document.getElementById("myCanvas");
-		// ctx = canvas.getContext("2d");
-		// ctx.fillStyle="#000000";
-		// ctx.beginPath();
-		// ctx.moveTo(200, 100);
-		// ctx.lineTo(220, 120);
-		// ctx.lineTo(180, 120);
-		// ctx.closePath();
-		// ctx.fill();
 
 })(jQuery);
