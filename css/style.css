@@ -27,9 +27,19 @@ body {
 	float: left;
 }
 
-#myButton {
+#myDiv {
 	padding: 40px;
-	margin-top: 160px;
+	margin-top: 160px;	
+	color: #fff;
+	width: 80%;
+}
+
+.myDivClass {
+	background: #d9534f;
+}
+
+.otherDiv {
+	background: #f0ad4e;
 }
 
 iframe, object, embed {
@@ -38,6 +48,10 @@ iframe, object, embed {
 .spacing {
 	margin-top: 20px;
 	margin-left: 5px;
+}
+
+.centreText {
+	text-align: center;
 }
 
 .smallspace {

@@ -9,10 +9,10 @@ var maxThrust = 0.2;
 var maxCoast = 0.99;
 var thrustColor = "orange";
 var crazy = false;
+var myPath = new Path();
+myPath.strokeColor = 'black';
 
-var path = new Path();
-path.strokeColor = 'black';
-path.add(position);
+
 
 function onFrame() {
 	if(Key.isDown('left')) {
@@ -26,7 +26,7 @@ function onFrame() {
   } else {
     Triangle.coast();
   }  
-	Triangle.move();	
+	Triangle.move();
 }
 
 project.currentStyle.strokeColor = 'black';
@@ -86,9 +86,11 @@ var Triangle = new function() {
     },
     
     move: function() {
-    	this.thrustUpdate();    
-      group.position += this.vector;
+    	this.thrustUpdate(); 
+    	this.display(); 
+      group.position += this.vector;      
       keepInView(group);
+      myPath.add(group.position);
     },
 
     thrustUpdate: function() {
@@ -103,9 +105,12 @@ var Triangle = new function() {
 
     resetTriangle: function() {
     	group.position = view.bounds.center;
-    	this.vector.angle = 0;
+    	group.rotate(-this.angle);
+    	//this.vector.angle = this.vector.angle;
+    	this.angle -= this.angle;
     	this.vector.length = 0;
     	this.length = 0;
+    	myPath.removeSegments();
     },
 
     increase: function(){
@@ -125,8 +130,23 @@ var Triangle = new function() {
 			maxThrust = 0.2;
 			maxCoast = 0.99;
 			thrustColor = "orange";
-		}
+		},
+		display: function() {
+			var htmlNormal = "<h3 class='centreText'>Normal Mode</h3>";
+			var htmlCrazy = "<h3 class='centreText'>Crazy Mode</h3>" ;
+			var myDiv = document.getElementById("myDiv");
 
+			if(crazy){
+				myDiv.className = "myDivClass pull-right";
+				myDiv.innerHTML = htmlCrazy;				
+			} else {
+				myDiv.innerHTML = htmlNormal;
+				myDiv.className = "otherDiv pull-right";
+			}
+		},
+		addPath: function(position) {				
+			myPath.add(position);
+		}
   }
 }
 
@@ -170,3 +190,4 @@ function onKeyUp(event){
 		} 
 	}
 }
+

@@ -19,7 +19,7 @@
           <canvas id="myCanvas" width="800" height="400" ></canvas>
         </div>
         <div class="col-sm-4 col-md-4 col-lg-4" >
-          <button id="myButton" type="button" class="btn btn-danger pull-right">The Red Button (Crazy Mode)</button>
+          <div id="myDiv" class="myDivClass pull-right"><h3 class="centreText myDivClass">Normal Mode</h3></div>
         </div>
       </div> <!-- row -->
       <div class="row">
