@@ -22,8 +22,14 @@ body {
 
 #myCanvas {
 	border: 1px solid #000000;
-	background: #00ff00;
+	background: #3498db;
 	margin: 0 auto;
+	float: left;
+}
+
+#myButton {
+	padding: 40px;
+	margin-top: 160px;
 }
 
 iframe, object, embed {
