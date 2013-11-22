@@ -24,7 +24,7 @@
       </div> <!-- row -->
       <div class="row">
         <div class="col-sm-12 pull-left">
-          <span class="label label-default">Shift</span><p><em>Shift for danger mode</em></p>  
+          <p><span class="label label-default">shift</span><em> to toggle crazy mode</em> <span class="glyphicon glyphicon-pause"></span> <span class="label label-default">r</span> to reset <span class="glyphicon glyphicon-pause"></span> <span class="label label-default">space</span> to 180 turn <span class="glyphicon glyphicon-pause"></span> <span class="label label-default">up</span> to thrust <span class="glyphicon glyphicon-pause"></span> <span class="label label-default">left</span> to turn left <span class="glyphicon glyphicon-pause"></span> <span class="label label-default">right</span> to turn right</p>
         </div>        
       </div>
 
