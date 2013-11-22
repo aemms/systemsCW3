@@ -10,7 +10,8 @@
   <body>
     <div class="container">
       <header>
-        <h1>Alex Emms Systems Engineering Coursework 3 <a href="turtle.php"><span class="glyphicon glyphicon-expand pull-right"></span></a></h1>
+        <div class="pull-left"><h1>Alex Emms Systems Engineering Coursework 3</h1></div>
+          <h3><a href="turtle.php"><span class="glyphicon glyphicon-expand pull-right spacing"></span></h3><h3 class="pull-right">Play Triangle Game  </h3></a>
       </header>
       <section class="row space">
         <?php include "php/section_myself.php" ?>

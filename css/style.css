@@ -35,6 +35,13 @@ body {
 iframe, object, embed {
   max-width: 100%;
 }
-.myself
+.spacing {
+	margin-top: 20px;
+	margin-left: 5px;
+}
+
+.smallspace {
+	margin-top: 2px;
+}
 
 .project
