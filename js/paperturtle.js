@@ -10,7 +10,7 @@ var maxCoast = 0.99;
 var thrustColor = "orange";
 var crazy = false;
 var myPath = new Path();
-myPath.strokeColor = 'black';
+myPath.strokeColor = 'yellow';
 
 
 
@@ -90,7 +90,7 @@ var Triangle = new function() {
     	this.display(); 
       group.position += this.vector;      
       keepInView(group);
-      myPath.add(group.position);
+    	myPath.add(group.position);
     },
 
     thrustUpdate: function() {
@@ -143,9 +143,6 @@ var Triangle = new function() {
 				myDiv.innerHTML = htmlNormal;
 				myDiv.className = "otherDiv pull-right";
 			}
-		},
-		addPath: function(position) {				
-			myPath.add(position);
 		}
   }
 }
@@ -157,18 +154,22 @@ function keepInView(item) {
 
   if (itemBounds.left > bounds.width) {
     position.x = -item.bounds.width;
+    return true;
   }
 
   if (position.x < -itemBounds.width) {
     position.x = bounds.width;
+    return true;
   }
 
   if (itemBounds.top > view.size.height) {
     position.y = -itemBounds.height;
+    return true;
   }
 
   if (position.y < -itemBounds.height) {
     position.y = bounds.height  + itemBounds.height / 2;
+    return true;
   }
 }
 
